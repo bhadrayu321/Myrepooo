@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Varela+Round&display=swap'); /* imported from google fonts*/
+
+body{
+    background-color: antiquewhite;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+font-family:'Ubuntu',sans-serif ;
+}
+nav ul{
+    display: flex; /*to align item horizontally*/
+    align-items: center;/* here the elements home and about are aligned to center*/
+    list-style-type:none; /* removing bullet points*/
+    height: 60px;
+    background-color: black;
+    color: White;
+     
+
+}
+nav ul li{
+    padding:0 12px ;/*padding between li elements*/
+}
+.brand img{
+    width:44px;
+    padding: 0 8px; /*to create space between img and text spotify*/
+}
+.brand{/* to align the spotify to the center*/
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.3rem
+}
+.container{/*min hiegth is required as we need to put our content to bottom*/
+    min-height:72vh;
+    background-color: black;
+    color: white;
+    font-family:'Varela Round',sans-serif ;
+    display:flex;
+    width: 70%;/*width is given so that container can come to centre with black bg*/
+    margin: 23px auto;/*margin so that we can get space for top bottom as well*/
+    border-radius: 12px;
+    padding:34px ;
+    background-image: url('bg.jpg');
+    background-size: cover; /* Make the background image cover the entire container */
+    background-position: center; /* Center the background image */
+}
+
+.bottom{
+    position:sticky;
+    height:100px ; 
+    background-color:black;
+    color: white;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    /*flex direction coloumn will help us to put the font icon just below and in center of range*/
+    /*with the  help of min -heigth i .container we will be now able to to attach out content to bottom */
+}
+.icons{
+    margin:14px 0; /*to give space between range and play button*/
+}
+.icons{
+    cursor: pointer;
+}
+#myProgressBar{
+    width : 80vw;
+    text-align: center;
+    cursor: pointer;
+
+}
+.songItemContainer{
+    margin-top:70px ;
+}
+.songitem{
+height: 50px;
+display: flex;
+background-color: white;
+color:black;
+margin:12px 0;
+justify-content: space-between;
+align-items: center;
+border-radius :34px;
+
+}
+.songitem img{
+width: 43px;
+margin:0 23px ;
+border-radius: 34px;
+}
+.timestamp{
+    margin:0 23px;
+}
+.timestamp i{
+    cursor: pointer;
+}
+.songInfo{
+    position:absolute ;
+    left:0;
+    left:10vw;
+    font-family:'Varela Round',sans-serif ;
+}
+.songInfo img{
+    opacity: 0;
+    transition:opacity 0.4s ease-in ;
+}

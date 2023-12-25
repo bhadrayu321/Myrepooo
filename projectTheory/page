@@ -1,0 +1,44 @@
+audioElement.addEventListener("timeupdate", () => { ... }): This event listener is triggered repeatedly as the audio playback progresses. Inside the callback function:
+
+audioElement.currentTime: Gets the current playback time of the audio.
+audioElement.duration: Gets the total duration of the audio.
+(audioElement.currentTime / audioElement.duration) \* 100: Calculates the percentage of audio playback completed.
+myProgressBar.value = progress;: Sets the value of the progress bar (myProgressBar) to the calculated percentage, updating the visual representation of the playback progress.
+myProgressBar.addEventListener("change", () => { ... }): This event listener is triggered when the user interacts with the progress bar and changes its value. Inside the callback function:
+
+myProgressBar.value: Gets the current value of the progress bar, representing the percentage.
+audioElement.currentTime = myProgressBar.value \* audioElement.duration / 100;: Calculates the new playback time based on the percentage selected by the user and sets the audio playback to that time. This allows the user to skip to a specific part of the audio by interacting with the progress bar.
+
+audioElement.currentTime: This property returns the current playback time of the audio in seconds. For example, if the audio is currently playing at 30 seconds, audioElement.currentTime would be 30.
+
+audioElement.duration: This property returns the total duration of the audio in seconds. For example, if the total duration of the audio is 300 seconds (5 minutes), audioElement.duration would be 300.
+
+(audioElement.currentTime / audioElement.duration) \* 100: This formula calculates the percentage of audio playback completed. It does this by dividing the current playback time by the total duration and then multiplying the result by 100 to convert it into a percentage.
+
+Example:
+
+If audioElement.currentTime is 30 seconds.
+If audioElement.duration is 300 seconds.
+Then, (30 / 300) \* 100 would be 10. This means that 10% of the audio has been played.
+
+myProgressBar.value = progress;: This line sets the value of the progress bar (myProgressBar) to the calculated percentage (progress). This is a standard way to visually represent the progress of playback on a UI element like a progress bar.
+
+So, in the example above, if 10% of the audio has been played, the progress bar's value will be set to 10, visually indicating that 10% of the audio has been completed.
+
+The formula essentially scales the current playback time relative to the total duration of the audio and expresses it as a percentage, which can be used to update a progress bar or any other visual representation of playback progress.
+
+myProgressBar.value: This retrieves the current value of the progress bar, which represents the percentage of audio playback completion selected by the user. For example, if the user selects 50% on the progress bar, myProgressBar.value would be 50.
+
+audioElement.duration: This property provides the total duration of the audio in seconds, as explained before.
+
+myProgressBar.value \* audioElement.duration / 100: This expression calculates the corresponding time in seconds based on the percentage selected by the user. It does this by multiplying the percentage (myProgressBar.value) by the total duration of the audio (audioElement.duration), and then dividing by 100 to convert the percentage to a decimal.
+
+Example:
+
+If myProgressBar.value is 50 (representing 50% on the progress bar).
+If audioElement.duration is 300 seconds.
+Then, 50 \* 300 / 100 would be 150. So, the calculated time is 150 seconds.
+
+audioElement.currentTime = myProgressBar.value \* audioElement.duration / 100;: This line sets the currentTime property of the audioElement to the calculated time. This effectively moves the playback position of the audio to the specified time, allowing the user to skip to a specific part of the audio by interacting with the progress bar.
+
+In summary, this line ensures that when the user interacts with the progress bar and selects a particular percentage, the audio playback position is adjusted to the corresponding time within the total duration of the audio. This mechanism allows the user to seek to a specific point in the audio file.
